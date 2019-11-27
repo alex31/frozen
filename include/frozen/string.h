@@ -39,6 +39,8 @@ public:
       : data_(data), size_(N - 1) {}
   constexpr string(char const *data, std::size_t size)
       : data_(data), size_(size) {}
+  constexpr string(const std::string_view& sv)
+    : data_(sv.data()), size_(sv.length()) {}
 
   constexpr string(const string &) noexcept = default;
   constexpr string &operator=(const string &) noexcept = default;
